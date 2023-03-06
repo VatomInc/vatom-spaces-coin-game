@@ -1,0 +1,15 @@
+{
+  "id": "game-coin-pickup",
+  "name": "Coin Game",
+  "version": "1.0.0",
+  "beta": false,
+  "personalPlugin": false,
+  "description": "A game where users can walk over coins to collect them.",
+  "longDescription": "It automatically drops coins which can then be collected by users by walking over it. Each coin simply increases an overall score counter.",
+  "configuration": "none",
+  "category": "Fun",
+  "businessId": "ym3t3mPi0g",
+  "price": 0,
+  "releaseNotes": "First release",
+  "entrypoint": "https://plugins.vatom.com/ym3t3mPi0g/4d1a2ca3ecfe5cf185860403313c18ee/plugin.js"
+}

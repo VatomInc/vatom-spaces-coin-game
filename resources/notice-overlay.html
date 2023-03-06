@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <!-- Page info -->
+    <title>Notice</title>
+    
+    <!-- Custom fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <!-- Style -->
+    <style>
+
+        /* Default text style */
+        div {
+            color: #FA0;
+            font-family: 'Press Start 2P', cursive;
+        }
+
+        #progressbar {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 20px;
+            background-color: #666;
+            border-radius: 10px;
+        }
+
+    </style>
+
+    <!-- Coin cointer -->
+    <div style="text-align: right; " onclick="parent.postMessage({ action: 'coin-alert' }, '*')">
+        <img src="coin.gif" style="width: 64px; height: 64px; margin: -17px; display: inline-block; " />
+        <div id='score' style="display: inline-block; font-size: 28px; -webkit-text-stroke: black 1px; ">?</div>
+    </div>
+
+    <!-- Progress bar -->
+    <!-- <div id='progressbar'><div></div></div> -->
+
+    <!-- Code -->
+    <script>
+
+        // Called when a message is received from the plugin
+        window.addEventListener('message', function(e) {
+
+            // If score change, show it
+            if (e.data.action == 'set-score')
+                document.getElementById('score').innerText = e.data.score
+
+        })
+
+        // On load, ask the plugin to send us all it's messages
+        parent.postMessage({ action: 'panel-load' }, '*')
+
+    </script>
+
+</body>
+</html>
